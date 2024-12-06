@@ -1,3 +1,4 @@
+## Watch Video Representation Here: https://drive.google.com/file/d/1yoZWypmEqu4pkgTftRUmz1qdQNSxR0dV/view?usp=sharing
 # Project Overview
 This Django project demonstrates an efficient blogging platform with features like detect the country, country-based blog filtering, dynamic frontend interaction, and a CSV import feature for blog posts. The project showcases backend and frontend integration with modern design principles.
 
@@ -76,6 +77,7 @@ The filtering mechanism is implemented using custom JavaScript. The posts are dy
 Blog posts with detected country displayed.
 Pagination and filtering feature.
 Enhanced UI with modern design.
+** Watch screenshot here: https://drive.google.com/file/d/1yoZWypmEqu4pkgTftRUmz1qdQNSxR0dV/view?usp=sharing
 
 # Views
 
