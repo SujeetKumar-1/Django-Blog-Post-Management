@@ -1,0 +1,156 @@
+body {
+    background-color: #1c1b37;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main-container .header-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-title h1 {
+    font-size: 28px;
+    font-family: poppins, sans-serif;
+    font-weight: 550;
+    color: #fff;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #007bff;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+
+.filter-container .filter-details select{
+    background-color: transparent;
+    padding: 5px;
+    border: navajowhite;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+
+.filter-container .filter-details select option{
+    color: #000;
+}
+
+.filter-container button{
+    background-color: #0665ca;
+    padding: 5px 8px;
+    border-radius: 5px;
+    border: 1px solid #0e4b8c;
+    cursor: pointer;
+}
+
+.filter-container .filter-details #apply-f{
+    margin-left: 20px;
+}
+
+#detectedCountry {
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.post-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.post-card {
+    height: 200px;
+    background-color: #3d3c47;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.post-card h2 {
+    padding: 10px;
+    background-color: #31455a;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    margin-top: 0;
+    border-radius: 5px 5px 0 0;
+}
+
+.post-card p {
+    padding: 0 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    height: 100px;
+}
+
+.post-card .details {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.9rem;
+    color: #cccccc;
+    padding: 7.5px 10px;
+    background-color: #31455a;
+    border-radius: 0 0 5px 5px;
+}
+
+.post-card .details span{
+    font-size: 12px;
+}
+
+.post-card .details span ion-icon{
+    font-size: 13px;
+    margin-left: 5px;
+    color: #fff;
+
+}
+
+.post-card .details #cntry{
+    color: #3391f6;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.pagination a:hover {
+    background-color: #0056b3;
+}
+
+.pagination .active {
+    background-color: #0056b3;
+}
+
+/* Filter toggle */
+.toggle-container {
+    display: flex;
+    align-items: center;
+}
+
+.toggle-container label {
+    margin-right: 10px;
+}

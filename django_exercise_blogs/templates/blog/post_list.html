@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Posts</title>
+
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body class="bg-gray-900 text-white">
+
+    <!-- Container -->
+    <div class="main-container">
+        <div class="header-title">
+            <h1>Blog Posts</h1>
+        </div>
+        <div class="filter-container">
+            <div class="filter-details">
+                <label for="countryFilterToggle">Filter posts by country:</label>
+                <select id="countryFilterToggle">
+                    <option selected>Select Country</option>
+                    <option value="1">India</option>
+                    <option value="2">UK</option>
+                    <option value="3">Australia</option>
+                    <option value="4">Japan</option>
+                    <option value="5">China</option>
+                    <option value="6">Germany</option>
+                    <option value="7">Canada</option>
+                    <option value="8">Brazil</option>
+                    <option value="9">France</option>
+                    <option value="10">America</option>
+                    <option value="11">England</option>
+                    <option value="12">Other</option>
+                </select>
+                <button type="submit" id="apply-f">Apply Filter</button>
+            </div>
+            
+            <button id="show_all">Show All Posts</button>
+        </div>
+
+        <!-- Detected Country -->
+        <div id="detectedCountry" class="bg-blue-700 text-white rounded-md p-3 mb-6">
+            <strong>Detected Country:</strong> {{ detected_country }}
+        </div>
+
+        <!-- Posts Grid -->
+        <div class="post-container">
+            {% for post in page_obj %}
+            <div class="post-card" data-country="{{ post.country }}">
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.content }}...</p>
+                <div class="details">
+                    <span>Posted on: {{ post.created_at }} </span>
+                    <span id="cntry"><ion-icon name="location"></ion-icon> {{ post.country }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="pagination">
+            {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}"
+                class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md">Previous</a>
+            {% endif %}
+
+            {% for page in page_obj.paginator.page_range %}
+            <a href="?page={{ page }}"
+                class="{% if page_obj.number == page %}bg-blue-700{% else %}bg-blue-600 hover:bg-blue-700{% endif %} text-white py-2 px-4 rounded-md">
+                {{ page }}
+            </a>
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}"
+                class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md">Next</a>
+            {% endif %}
+        </div>
+    </div>
+
+    
+    <script src="/static/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body >
+
+</html >
